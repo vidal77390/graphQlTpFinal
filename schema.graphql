@@ -1,0 +1,91 @@
+
+
+type Author {
+    name: String
+    """
+    List of all the BrainTeaser solved by the Author
+    """
+    listSolvedBrainTeaser: [BrainTeaser]
+}
+
+"""
+Comment of user
+"""
+type Comment {
+    text: String
+    score: ScoreEnum
+}
+
+"""
+Creator of BrainTeaser
+"""
+type Creator {
+    name: String
+    """
+    All BrainTeaser created by the Creator
+    """
+    listOfCreation: [BrainTeaser]
+}
+
+type BrainTeaser {
+    name: String
+    difficulty: DifficultyEnum
+    """
+    Link to the shop of the BrainTeaser
+    """
+    shopLink: String
+    """
+    Company who produced the BrainTeaser
+    """
+    producer: Company
+    """
+    Material of the BrainTeaser
+    """
+    material: MaterialEnum
+    """
+    Duration of the fastest official solvation in seconds
+    """
+    fasterSolving: Int
+
+}
+
+type Company {
+    name: String
+    """
+    Link to the shop of the Company
+    """
+    shopLink: String
+}
+
+"""
+Available Score for Comment
+"""
+enum ScoreEnum {
+    VERY_BAD
+    BAD
+    GOOD
+    VERY_GOOD
+    AWESOME
+}
+
+"""
+All the material a BrainTeaser can be
+"""
+enum MaterialEnum {
+    WOOD
+    METAL
+    GOLD
+    PLASTIC
+}
+
+"""
+All difficulty possible for a BrainTeaser
+"""
+enum DifficultyEnum {
+    BEGGINNER
+    EASY
+    NORMAL
+    HARD
+    EXPERT
+}
+
