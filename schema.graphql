@@ -14,8 +14,18 @@ Comment of user
 """
 type Comment {
     id: ID
+    """
+    Content of the comment
+    """
     text: String
+    """
+    Score posted by the author of the comment
+    """
     score: ScoreEnum
+    """
+    Author of the comment
+    """
+    author: Author
 }
 
 """
@@ -50,6 +60,10 @@ type BrainTeaser {
     Duration of the fastest official solvation in seconds
     """
     fasterSolving: Int
+    """
+    All the comments posted on the BrainTeaser
+    """
+    listOfComment: [Comment]
 
 }
 

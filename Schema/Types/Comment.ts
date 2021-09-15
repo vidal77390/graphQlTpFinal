@@ -1,5 +1,6 @@
 import {GraphQLID, GraphQLObjectType, GraphQLString} from "graphql";
 import ScoreEnum from "../Enums/ScoreEnum";
+import Author from "./Author";
 
 
 export default new GraphQLObjectType( {
@@ -7,6 +8,7 @@ export default new GraphQLObjectType( {
     fields: {
         id: { type: GraphQLID },
         text: { type: GraphQLString },
-        score: { type: ScoreEnum }
+        score: { type: ScoreEnum },
+        author: { type: Author }
     }
 })
