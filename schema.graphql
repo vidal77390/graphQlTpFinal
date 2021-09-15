@@ -1,6 +1,7 @@
 
 
 type Author {
+    id: ID
     name: String
     """
     List of all the BrainTeaser solved by the Author
@@ -12,6 +13,7 @@ type Author {
 Comment of user
 """
 type Comment {
+    id: ID
     text: String
     score: ScoreEnum
 }
@@ -20,6 +22,7 @@ type Comment {
 Creator of BrainTeaser
 """
 type Creator {
+    id: ID
     name: String
     """
     All BrainTeaser created by the Creator
@@ -28,6 +31,7 @@ type Creator {
 }
 
 type BrainTeaser {
+    id: ID
     name: String
     difficulty: DifficultyEnum
     """
@@ -50,6 +54,7 @@ type BrainTeaser {
 }
 
 type Company {
+    id: ID
     name: String
     """
     Link to the shop of the Company
