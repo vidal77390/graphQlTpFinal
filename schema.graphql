@@ -40,7 +40,7 @@ type Creator {
     listOfCreation: [BrainTeaser]
 }
 
-type BrainTeaser {
+interface BrainTeaser {
     id: ID
     name: String
     difficulty: DifficultyEnum
@@ -65,6 +65,77 @@ type BrainTeaser {
     """
     listOfComment: [Comment]
 
+}
+
+type Puzzle implements BrainTeaser {
+    # Common fields with BrainTeaser type
+    id: ID
+    name: String
+    difficulty: DifficultyEnum
+    """
+    Link to the shop of the BrainTeaser
+    """
+    shopLink: String
+    """
+    Company who produced the BrainTeaser
+    """
+    producer: Company
+    """
+    Material of the BrainTeaser
+    """
+    material: MaterialEnum
+    """
+    Duration of the fastest official solvation in seconds
+    """
+    fasterSolving: Int
+    """
+    All the comments posted on the BrainTeaser
+    """
+    listOfComment: [Comment]
+
+    # Specific fields of Puzzle type
+    """
+    Number of Axe we can use to move the RubiksCube
+    """
+    numberPiece: Int
+
+}
+
+type RubiksCube implements BrainTeaser {
+    # Common fields with BrainTeaser type
+    id: ID
+    name: String
+    difficulty: DifficultyEnum
+    """
+    Link to the shop of the BrainTeaser
+    """
+    shopLink: String
+    """
+    Company who produced the BrainTeaser
+    """
+    producer: Company
+    """
+    Material of the BrainTeaser
+    """
+    material: MaterialEnum
+    """
+    Duration of the fastest official solvation in seconds
+    """
+    fasterSolving: Int
+    """
+    All the comments posted on the BrainTeaser
+    """
+    listOfComment: [Comment]
+
+    # Specific fields of RubiksCube type
+    """
+    Number of Axe we can use to move the RubiksCube
+    """
+    numberAxe: Int
+    """
+    Number of facet on the RubiksCube
+    """
+    numberFacet: Int
 }
 
 type Company {
