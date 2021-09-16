@@ -1,10 +1,11 @@
-import {GraphQLID, GraphQLObjectType, GraphQLString} from "graphql";
+import {GraphQLID, GraphQLNonNull, GraphQLObjectType, GraphQLString} from "graphql";
+import {TypeName} from "../../Constants/GraphQL/TypeName";
 
 
 export default new GraphQLObjectType( {
-    name: 'Author',
+    name: TypeName.Author,
     fields: {
-        id: { type: GraphQLID },
-        name: { type: GraphQLString }
+        id: { type: GraphQLNonNull(GraphQLID) },
+        name: { type: GraphQLNonNull(GraphQLString) }
     }
 })

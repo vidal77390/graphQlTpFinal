@@ -1,14 +1,15 @@
-import {GraphQLID, GraphQLObjectType, GraphQLString} from "graphql";
+import {GraphQLID, GraphQLNonNull, GraphQLObjectType, GraphQLString} from "graphql";
 import ScoreEnum from "../Enums/ScoreEnum";
 import Author from "./Author";
+import {TypeName} from "../../Constants/GraphQL/TypeName";
 
 
 export default new GraphQLObjectType( {
-    name: 'Comment',
+    name: TypeName.Comment,
     fields: {
-        id: { type: GraphQLID },
+        id: { type: GraphQLNonNull(GraphQLID) },
         text: { type: GraphQLString },
         score: { type: ScoreEnum },
-        author: { type: Author }
+        author: { type: GraphQLNonNull(Author) }
     }
 })

@@ -1,5 +1,5 @@
 import createClient from './createClient';
-import {TableName} from "./Constants/TableName";
+import {TableName} from "../Constants/Database/TableName";
 
 let database = createClient();
 

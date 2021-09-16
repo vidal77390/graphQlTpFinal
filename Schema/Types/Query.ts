@@ -1,5 +1,5 @@
 import {GraphQLID, GraphQLList, GraphQLObjectType} from "graphql";
-import BrainTeaser from "./BrainTeaser";
+import BrainTeaser from "../Interface/BrainTeaser";
 import database, {findBrainTeaserById, getAllBrainTeaser} from "../../Database";
 
 

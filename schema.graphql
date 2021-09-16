@@ -1,8 +1,8 @@
 
 
 type Author {
-    id: ID
-    name: String
+    id: ID!
+    name: String!
     """
     List of all the BrainTeaser solved by the Author
     """
@@ -32,8 +32,8 @@ type Comment {
 Creator of BrainTeaser
 """
 type Creator {
-    id: ID
-    name: String
+    id: ID!
+    name: String!
     """
     All BrainTeaser created by the Creator
     """
@@ -41,9 +41,9 @@ type Creator {
 }
 
 interface BrainTeaser {
-    id: ID
-    name: String
-    difficulty: DifficultyEnum
+    id: ID!
+    name: String!
+    difficulty: DifficultyEnum!
     """
     Link to the shop of the BrainTeaser
     """
@@ -51,11 +51,11 @@ interface BrainTeaser {
     """
     Company who produced the BrainTeaser
     """
-    producer: Company
+    producer: Company!
     """
     Material of the BrainTeaser
     """
-    material: MaterialEnum
+    material: MaterialEnum!
     """
     Duration of the fastest official solvation in seconds
     """
@@ -69,9 +69,9 @@ interface BrainTeaser {
 
 type Puzzle implements BrainTeaser {
     # Common fields with BrainTeaser type
-    id: ID
-    name: String
-    difficulty: DifficultyEnum
+    id: ID!
+    name: String!
+    difficulty: DifficultyEnum!
     """
     Link to the shop of the BrainTeaser
     """
@@ -79,11 +79,11 @@ type Puzzle implements BrainTeaser {
     """
     Company who produced the BrainTeaser
     """
-    producer: Company
+    producer: Company!
     """
     Material of the BrainTeaser
     """
-    material: MaterialEnum
+    material: MaterialEnum!
     """
     Duration of the fastest official solvation in seconds
     """
@@ -97,15 +97,15 @@ type Puzzle implements BrainTeaser {
     """
     Number of Axe we can use to move the RubiksCube
     """
-    numberPiece: Int
+    numberPiece: Int!
 
 }
 
 type RubiksCube implements BrainTeaser {
     # Common fields with BrainTeaser type
-    id: ID
-    name: String
-    difficulty: DifficultyEnum
+    id: ID!
+    name: String!
+    difficulty: DifficultyEnum!
     """
     Link to the shop of the BrainTeaser
     """
@@ -113,11 +113,11 @@ type RubiksCube implements BrainTeaser {
     """
     Company who produced the BrainTeaser
     """
-    producer: Company
+    producer: Company!
     """
     Material of the BrainTeaser
     """
-    material: MaterialEnum
+    material: MaterialEnum!
     """
     Duration of the fastest official solvation in seconds
     """
@@ -131,16 +131,16 @@ type RubiksCube implements BrainTeaser {
     """
     Number of Axe we can use to move the RubiksCube
     """
-    numberAxe: Int
+    numberAxe: Int!
     """
     Number of facet on the RubiksCube
     """
-    numberFacet: Int
+    numberFacet: Int!
 }
 
 type Company {
-    id: ID
-    name: String
+    id: ID!
+    name: String!
     """
     Link to the shop of the Company
     """

@@ -1,11 +1,12 @@
-import {GraphQLID, GraphQLObjectType, GraphQLString} from "graphql";
+import {GraphQLID, GraphQLNonNull, GraphQLObjectType, GraphQLString} from "graphql";
+import {TypeName} from "../../Constants/GraphQL/TypeName";
 
 
 export default new GraphQLObjectType( {
-    name: 'Company',
+    name: TypeName.Company,
     fields: {
-        id: { type: GraphQLID },
-        name: { type: GraphQLString },
+        id: { type: GraphQLNonNull(GraphQLID) },
+        name: { type: GraphQLNonNull(GraphQLString) },
         shopLink: { type: GraphQLString }
     }
 })
