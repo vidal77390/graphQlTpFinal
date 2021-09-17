@@ -43,6 +43,13 @@ type Creator {
 interface BrainTeaser {
     id: ID!
     name: String!
+    """
+    Creator of the BrainTeaser
+    """
+    creator: Creator
+    """
+    Difficulty of the BrainTeaser
+    """
     difficulty: DifficultyEnum!
     """
     Link to the shop of the BrainTeaser
@@ -71,6 +78,13 @@ type Puzzle implements BrainTeaser {
     # Common fields with BrainTeaser type
     id: ID!
     name: String!
+    """
+    Creator of the BrainTeaser
+    """
+    creator: Creator
+    """
+    Difficulty of the BrainTeaser
+    """
     difficulty: DifficultyEnum!
     """
     Link to the shop of the BrainTeaser
@@ -105,6 +119,13 @@ type RubiksCube implements BrainTeaser {
     # Common fields with BrainTeaser type
     id: ID!
     name: String!
+    """
+    Creator of the BrainTeaser
+    """
+    creator: Creator
+    """
+    Difficulty of the BrainTeaser
+    """
     difficulty: DifficultyEnum!
     """
     Link to the shop of the BrainTeaser
