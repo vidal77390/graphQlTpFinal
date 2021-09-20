@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs';
 import { printSchema } from 'graphql';
-import schema from '../Schema';
+import schema from '../schema';
 
 (async () => {
   fs.writeFile('schema.graphql', printSchema(schema), { encoding: 'utf-8' });

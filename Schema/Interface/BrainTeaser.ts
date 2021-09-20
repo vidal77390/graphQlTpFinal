@@ -7,16 +7,21 @@ import {
     GraphQLList,
     GraphQLFieldConfigMap, GraphQLBoolean
 } from "graphql";
-import DifficultyEnum from "../Enums/DifficultyEnum";
-import MaterialEnum from "../Enums/MaterialEnum";
-import Company from "../Types/Company";
-import Comment from "../Types/Comment";
-import {TypeName} from "../../Constants/GraphQL/TypeName";
+import DifficultyEnum from "../enums/DifficultyEnum";
+import MaterialEnum from "../enums/MaterialEnum";
+import Company from "../types/Company";
+import Comment from "../types/Comment";
+import {TypeName} from "../../constants/GraphQL/TypeName";
+import { TableName } from "../../constants/Database/TableName";
 
-export const resolveType = (obj: { numberFacet?: string; numberPiece?: string }) => {
-    if (obj.numberFacet) {
+export const resolveType = (obj: { facet_number?: string; piece_number?: string; }) => {
+    console.log(obj)
+
+    if (obj.facet_number) {
         return TypeName.RubiksCube;
-    }else return TypeName.Puzzle;
+    } else if (obj.piece_number){
+        return TypeName.Puzzle;
+    }
 };
 
 export const brainTeaserFields: GraphQLFieldConfigMap<
@@ -34,7 +39,7 @@ export const brainTeaserFields: GraphQLFieldConfigMap<
 };
 
 export default new GraphQLInterfaceType({
-    name: TypeName.BrainTeaser,
+    name: "BrainTeaser",
     resolveType,
     fields: () => brainTeaserFields
 });

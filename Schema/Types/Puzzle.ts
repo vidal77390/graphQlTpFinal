@@ -1,6 +1,6 @@
 import {GraphQLID, GraphQLInt, GraphQLList, GraphQLNonNull, GraphQLObjectType, GraphQLString} from "graphql";
-import {TypeName} from "../../Constants/GraphQL/TypeName";
-import BrainTeaser, {brainTeaserFields} from "../Interface/BrainTeaser";
+import {TypeName} from "../../constants/GraphQL/TypeName";
+import BrainTeaser, {brainTeaserFields} from "../interface/BrainTeaser";
 
 
 export default new GraphQLObjectType( {
@@ -8,6 +8,11 @@ export default new GraphQLObjectType( {
     interfaces: [BrainTeaser],
     fields: {
         ...brainTeaserFields,
-        numberPiece: { type: new GraphQLNonNull(GraphQLInt) }
+        pieceNumber: {
+            type: new GraphQLNonNull(GraphQLInt),
+            resolve: (obj) => {
+                return obj.piece_number
+            } 
+        }
     }
 })

@@ -2,7 +2,7 @@ import {GraphQLEnumType} from "graphql";
 
 
 export default new GraphQLEnumType({
-    name: 'MaterialEnum',
+    name: 'DifficultyEnum',
     description: 'All possible Material of BrainTeaser',
     values: {
         BEGGINNER: {

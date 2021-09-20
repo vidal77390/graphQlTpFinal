@@ -1,29 +1,17 @@
-import createClient from './createClient';
-import {TableName} from "../Constants/Database/TableName";
+const { Client } = require('pg')
+const client = new Client()
+client.connect()
 
-let database = createClient();
 
 export const findBrainTeaserById = async (id: number) => {
-  const { data, error } = await database
-    .from(TableName.BrainTeaserTable)
-    .select('*')
-    .filter('id', 'eq', id)
-    .single();
-  if (error) {
-    throw error;
-  }
-  return data;
+  const response = await client.query(`SELECT * FROM ONLY brain_teaser NATURAL FULL JOIN rubiks_cube NATURAL FULL JOIN puzzle WHERE id = ${id} LIMIT 1`)
+
+  return response.rows[0]
 };
 
 export const getAllBrainTeaser = async () => {
-  const { data, error } = await database
-      .from(TableName.BrainTeaserTable)
-      .select('*')
-  if (error) {
-    throw error;
-  }
-  return data;
+  const response = await client.query('SELECT * FROM ONLY brain_teaser NATURAL FULL JOIN rubiks_cube NATURAL FULL JOIN puzzle')
+  console.log(response)
+
+  return response.rows
 }
-
-
-export default database;

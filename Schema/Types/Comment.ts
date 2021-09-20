@@ -1,7 +1,7 @@
 import {GraphQLID, GraphQLNonNull, GraphQLObjectType, GraphQLString} from "graphql";
-import ScoreEnum from "../Enums/ScoreEnum";
+import ScoreEnum from "../enums/ScoreEnum";
 import Author from "./Author";
-import {TypeName} from "../../Constants/GraphQL/TypeName";
+import {TypeName} from "../../constants/GraphQL/TypeName";
 
 
 export default new GraphQLObjectType( {

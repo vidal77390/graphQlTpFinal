@@ -111,7 +111,7 @@ type Puzzle implements BrainTeaser {
     """
     Number of Axe we can use to move the RubiksCube
     """
-    numberPiece: Int!
+    pieceNumber: Int!
 
 }
 
@@ -152,11 +152,11 @@ type RubiksCube implements BrainTeaser {
     """
     Number of Axe we can use to move the RubiksCube
     """
-    numberAxe: Int!
+    axeNumber: Int!
     """
     Number of facet on the RubiksCube
     """
-    numberFacet: Int!
+    facetNumber: Int!
 }
 
 type Company {
