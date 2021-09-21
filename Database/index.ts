@@ -17,9 +17,16 @@ export const getAllBrainTeaser = async () => {
 }
 
 
-export const registerUser = async (id: string, username: string, password: string) => {
+export const registerUser = async (username: string, password: string) => {
   const response = await client.query(`INSERT INTO user_bt (username, password) VALUES ('${username}', '${password}')`)
   console.log(response)
 
   return response.rows
+}
+
+export const getUserByUsername = async (username: string) => {
+  const response = await client.query(`SELECT * from user_bt WHERE username = '${username}' LIMIT 1`)
+  console.log(response)
+
+  return response.rows[0]
 }

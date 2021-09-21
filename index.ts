@@ -2,6 +2,8 @@ import express from 'express';
 import { graphqlHTTP } from 'express-graphql';
 import schema from './schema';
 import defaultQuery from './utils/defaultQuery';
+import jwt = require("express-jwt")
+require('dotenv').config()
 
 var app = express();
 app.use(

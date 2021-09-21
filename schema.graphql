@@ -204,11 +204,12 @@ enum DifficultyEnum {
 
 
 type Mutation {
-  registerUser(input: RegisterUserInput!): AuthPayload
+  registerUser(input: SessionUserInput!): AuthPayload,
+  loginUser(input: SessionUserInput!): AuthPayload,
 }
 
 
-input RegisterUserInput {
+input SessionUserInput {
   username: String!
   password: String!
 }

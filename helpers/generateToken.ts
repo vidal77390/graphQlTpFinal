@@ -1,10 +1,10 @@
 import * as jsonwebtoken from 'jsonwebtoken';
 
-const generateToken = (id: string, email: string) => {
+const generateToken = (username: string, password: string) => {
   return jsonwebtoken.sign(
     {
-      id,
-      email,
+      username,
+      password,
     },
     process.env.JWT_KEY as string,
     { expiresIn: '1d' }
