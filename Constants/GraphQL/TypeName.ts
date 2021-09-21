@@ -1,7 +1,7 @@
 
 export enum TypeName {
     BrainTeaser = "BrainTeaser",
-    Author = "Author",
+    User = "User",
     Comment = "Comment",
     Company = "Company",
     Creator = "Creator",

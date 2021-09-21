@@ -1,10 +1,12 @@
 
 
-type Author {
+type User {
     id: ID!
     name: String!
+    password: String!
+
     """
-    List of all the BrainTeaser solved by the Author
+    List of all the BrainTeaser solved by the User
     """
     listSolvedBrainTeaser: [BrainTeaser]
 }
@@ -25,7 +27,7 @@ type Comment {
     """
     Author of the comment
     """
-    author: Author
+    user: User
 }
 
 """
@@ -200,3 +202,19 @@ enum DifficultyEnum {
     EXPERT
 }
 
+
+type Mutation {
+  registerUser(input: RegisterUserInput!): AuthPayload
+}
+
+
+input RegisterUserInput {
+  username: String!
+  password: String!
+}
+
+type AuthPayload {
+  token: String
+  message: String
+  user: User
+}

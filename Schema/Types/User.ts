@@ -3,9 +3,10 @@ import {TypeName} from "../../constants/GraphQL/TypeName";
 
 
 export default new GraphQLObjectType( {
-    name: TypeName.Author,
+    name: TypeName.User,
     fields: {
         id: { type: GraphQLNonNull(GraphQLID) },
-        name: { type: GraphQLNonNull(GraphQLString) }
+        username: { type: GraphQLNonNull(GraphQLString) },
+        password: { type: GraphQLNonNull(GraphQLString) }
     }
 })

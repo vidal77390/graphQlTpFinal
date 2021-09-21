@@ -15,3 +15,11 @@ export const getAllBrainTeaser = async () => {
 
   return response.rows
 }
+
+
+export const registerUser = async (id: string, username: string, password: string) => {
+  const response = await client.query(`INSERT INTO user_bt (username, password) VALUES ('${username}', '${password}')`)
+  console.log(response)
+
+  return response.rows
+}

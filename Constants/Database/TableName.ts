@@ -3,7 +3,7 @@
 export enum TableName {
     BrainTeaserTable = "brain_teaser",
     CommentTable = "comment",
-    AuthorTable = "author",
+    UserTable = "user",
     CreatorTable = "creator",
     PuzzleTable = "puzzle",
     RubiksCubeTable = "rubiks_cube",
