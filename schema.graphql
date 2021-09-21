@@ -204,8 +204,10 @@ enum DifficultyEnum {
 
 
 type Mutation {
-  registerUser(input: SessionUserInput!): AuthPayload,
-  loginUser(input: SessionUserInput!): AuthPayload,
+  registerUser(input: SessionUserInput!): AuthPayload
+  loginUser(input: SessionUserInput!): AuthPayload
+  postComment(input: PostCommentInput!): PostCommentPayload
+    deleteComment(input: DeleteCommentInput!): DeleteCommentPayload
 }
 
 
@@ -218,4 +220,30 @@ type AuthPayload {
   token: String
   message: String
   user: User
+}
+
+input PostCommentInput {
+    idUser: ID!
+    idBrainTeaser: ID!
+    comment: CommentInput!
+}
+
+type PostCommentPayload {
+    isPosted: Boolean!
+    comment: Comment
+    brainTeaser: BrainTeaser
+}
+
+type DeleteCommentPayload {
+    isDeleted: Boolean
+}
+
+input DeleteCommentInput {
+    idUser: ID!
+    idComment: ID!
+}
+
+input CommentInput {
+    text: String!
+    score: ScoreEnum!
 }

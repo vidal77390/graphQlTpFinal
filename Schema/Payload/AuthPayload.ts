@@ -1,6 +1,6 @@
 import { GraphQLID, GraphQLNonNull, GraphQLObjectType, GraphQLString } from "graphql";
-import { TypeName } from "../../constants/GraphQL/TypeName";
-import User from "./User";
+import { TypeName } from "../../Constants/GraphQL/TypeName";
+import User from "../Types/User";
 
 
 export default new GraphQLObjectType({

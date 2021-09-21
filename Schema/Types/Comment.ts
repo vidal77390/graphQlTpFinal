@@ -7,7 +7,7 @@ import {TypeName} from "../../constants/GraphQL/TypeName";
 export default new GraphQLObjectType( {
     name: TypeName.Comment,
     fields: {
-        id: { type: GraphQLNonNull(GraphQLID) },
+        id: { type: GraphQLID },
         text: { type: GraphQLString },
         score: { type: ScoreEnum },
         author: { type: GraphQLNonNull(User) }

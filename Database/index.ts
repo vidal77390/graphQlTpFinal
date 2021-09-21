@@ -1,3 +1,5 @@
+import ScoreEnum from "../Schema/Enums/ScoreEnum";
+
 const { Client } = require('pg')
 const client = new Client()
 client.connect()
@@ -29,4 +31,13 @@ export const getUserByUsername = async (username: string) => {
   console.log(response)
 
   return response.rows[0]
+}
+
+export const deleteComment = async (idComment: number, idUser: number) => {
+  // TODO requete pour delete le comment ainsi que dans l'enregistrement du brainTeaser
+}
+
+export const createComment = async (userID: number, brainTeaserID: number, text: string, score: string) => {
+  // TODO Insert into comment TABLE + insert id of comment in brainTeaser selected
+  const response = await client.query(`INSERT INTO comment VALUES`)
 }
