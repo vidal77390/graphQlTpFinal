@@ -1,6 +1,6 @@
 import {GraphQLID, GraphQLList, GraphQLObjectType} from "graphql";
-import BrainTeaser from "../interface/BrainTeaser";
-import {findBrainTeaserById, getAllBrainTeaser} from "../../database";
+import BrainTeaser from "../Interface/BrainTeaser";
+import {findBrainTeaserById, getAllBrainTeaser} from "../../Database";
 
 
 export default new GraphQLObjectType({

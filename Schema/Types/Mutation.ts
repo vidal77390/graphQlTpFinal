@@ -1,7 +1,7 @@
 import AuthPayload from "../Payload/AuthPayload";
 import {GraphQLID, GraphQLList, GraphQLNonNull, GraphQLObjectType, GraphQLString} from "graphql";
 import { v4 as uuidv4 } from 'uuid';
-import {registerUser, getUserByUsername, createComment, deleteComment} from "../../database";
+import {registerUser, getUserByUsername, createComment, deleteComment} from "../../Database";
 import * as bcrypt from 'bcryptjs';
 import generateToken from '../../helpers/generateToken';
 import { User } from "@supabase/gotrue-js";
