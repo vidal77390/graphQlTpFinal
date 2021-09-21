@@ -7,12 +7,12 @@ import {
     GraphQLList,
     GraphQLFieldConfigMap, GraphQLBoolean
 } from "graphql";
-import DifficultyEnum from "../enums/DifficultyEnum";
-import MaterialEnum from "../enums/MaterialEnum";
-import Company from "../types/Company";
-import Comment from "../types/Comment";
-import {TypeName} from "../../constants/GraphQL/TypeName";
-import { TableName } from "../../constants/Database/TableName";
+import DifficultyEnum from "../Enums/DifficultyEnum";
+import MaterialEnum from "../Enums/MaterialEnum";
+import Company from "../Types/Company";
+import Comment from "../Types/Comment";
+import {TypeName} from "../../Constants/GraphQL/TypeName";
+import { TableName } from "../../Constants/Database/TableName";
 
 export const resolveType = (obj: { facet_number?: string; piece_number?: string; }) => {
     console.log(obj)

@@ -1,5 +1,5 @@
 import {GraphQLInt, GraphQLNonNull, GraphQLObjectType} from "graphql";
-import {TypeName} from "../../constants/GraphQL/TypeName";
+import {TypeName} from "../../Constants/GraphQL/TypeName";
 import BrainTeaser, {brainTeaserFields} from "../interface/BrainTeaser";
 
 

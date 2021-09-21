@@ -1,6 +1,6 @@
 import {GraphQLID, GraphQLList, GraphQLNonNull, GraphQLObjectType, GraphQLString} from "graphql";
 import BrainTeaser from "../interface/BrainTeaser";
-import {TypeName} from "../../constants/GraphQL/TypeName";
+import {TypeName} from "../../Constants/GraphQL/TypeName";
 
 
 export default new GraphQLObjectType( {
